@@ -1,0 +1,10 @@
+config { type: "operations" }
+
+-- define stored procedure
+CREATE OR REPLACE PROCEDURE dataform.create_transactions()
+BEGIN
+  DECLARE id STRING;
+  SET id = GENERATE_UUID();
+  INSERT INTO dataform.transactions (name,transaction_id,date)
+    VALUES('Chas',id,CURRENT_DATE('America/New_York'));
+END
