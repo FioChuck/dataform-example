@@ -21,10 +21,12 @@ jobs:
       - name: Decrypt dataform credentials
         run: gpg --quiet --batch --yes --decrypt --passphrase="$CREDENTIALS_GPG_PASSPHRASE" --output .df-credentials.json df-credentials.json.gpg
         env:
-          CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
+          CREDENTIALS_GPG_PASSPHRASE: ${{secrets.CREDENTIALS_GPG_PASSPHRASE}}
 
       - name: set defaults
         run: dataform init bigquery --default-location US --default-database cf-data-analytics
+        uses: docker://dataformco/dataform:1.6.11
+
       - name: Execute dataform run
         uses: docker://dataformco/dataform:1.6.11
         with:
