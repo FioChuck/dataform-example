@@ -24,8 +24,9 @@ jobs:
           CREDENTIALS_GPG_PASSPHRASE: ${{secrets.CREDENTIALS_GPG_PASSPHRASE}}
 
       - name: set defaults
-        run: dataform init bigquery --default-location US --default-database cf-data-analytics
         uses: docker://dataformco/dataform:1.6.11
+        with:
+          args: dataform init bigquery --default-location US --default-database cf-data-analytics
 
       - name: Execute dataform run
         uses: docker://dataformco/dataform:1.6.11
