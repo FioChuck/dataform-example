@@ -1,3 +1,7 @@
+node_modules/
+.df-credentials.json
+deploy.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
