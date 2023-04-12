@@ -2,6 +2,8 @@ node_modules/
 .df-credentials.json
 deploy.sh
 
+account service-1089470781238@gcp-sa-dataform.iam.gserviceaccount.com
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
