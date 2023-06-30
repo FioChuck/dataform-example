@@ -3,10 +3,11 @@ config { type: "view" }
 -- define view
 SELECT
   COUNT(*) AS cnt,
-  name
+  date,
+  
 FROM
   `cf-data-analytics.dataform.transactions`
 GROUP BY
-  name
+  date
 ORDER BY
   cnt desc
