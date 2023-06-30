@@ -1,0 +1,12 @@
+config { type: "view" }
+
+-- define view
+SELECT
+  COUNT(*) AS cnt,
+  name
+FROM
+  `cf-data-analytics.dataform.transactions`
+GROUP BY
+  name
+ORDER BY
+  cnt desc
