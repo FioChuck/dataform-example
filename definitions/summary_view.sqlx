@@ -3,7 +3,7 @@ config { type: "view" }
 -- define view
 SELECT
   COUNT(*) AS cnt,
-  date,
+  date
   
 FROM
   `cf-data-analytics.dataform.transactions`
